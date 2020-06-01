@@ -10,7 +10,7 @@ RUN echo "===> Adding Python runtime..."  && \
     pip3 install --upgrade pip && \
     \
     echo "===> Installing Ansible..."  && \
-    pip3 install ansible                && \
+    pip3 install ansible ansible-lint     && \
     \
     echo "===> Removing package list..."  && \
     apk del build-dependencies            && \
