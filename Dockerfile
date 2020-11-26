@@ -3,7 +3,7 @@
 FROM alpine:latest
 
 RUN echo "===> Adding Python runtime..."  && \
-    apk add --no-cache py3-pip openssl ca-certificates sshpass openssh-client git && \
+    apk add --no-cache py3-pip openssl ca-certificates sshpass openssh-client git curl && \
     apk add --no-cache --virtual build-dependencies \
       python3-dev libffi-dev openssl-dev build-base  && \
     \
