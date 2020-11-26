@@ -3,14 +3,14 @@
 FROM alpine:latest
 
 RUN echo "===> Adding Python runtime..."  && \
-    apk add --no-cache py3-pip openssl ca-certificates sshpass openssh-client && \
+    apk add --no-cache py3-pip openssl ca-certificates sshpass openssh-client git && \
     apk add --no-cache --virtual build-dependencies \
       python3-dev libffi-dev openssl-dev build-base  && \
     \
     pip3 install --upgrade pip && \
     \
     echo "===> Installing Ansible..."  && \
-    pip3 install ansible ansible-lint     && \
+    pip3 install "ansible<2.10" ansible-lint     && \
     \
     echo "===> Removing package list..."  && \
     apk del build-dependencies            && \
